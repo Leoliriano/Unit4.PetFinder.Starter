@@ -12,17 +12,80 @@ Begin this Career Simulation by cloning the GitHub repo, pseudocoding prompts, i
 
 The GET route for all pets is currently "under construction". Navigate to `index.js` and find the GET method at `/api/v1/pets` and write the code to get all pets from the database.
 
+answer:
+
+DEFINE endpoint GET /api/v1/pets
+    INITIALIZE database connection
+    TRY
+        EXECUTE SQL query to fetch all records from 'pets' table
+        IF query is successful
+            RETURN all pet records as JSON
+        ELSE
+            RETURN error message
+    CATCH any errors
+        LOG error
+        RETURN server error message
+    END TRY-CATCH
+END DEFINE
+
+
 ### Problem 2: GET pets by name
 
 The GET route for pets by name is currently "under construction". Navigate to `index.js` and find the GET method at `/api/v1/pets/:name` and write the code to get a pet by name from the database.
+
+answer: DEFINE endpoint GET /api/v1/pets/:name
+    RETRIEVE name from request parameters
+    INITIALIZE database connection
+    TRY
+        EXECUTE SQL query to find pet with matching name
+        IF pet found
+            RETURN pet as JSON
+        ELSE
+            RETURN 'Pet not found' message
+    CATCH any errors
+        LOG error
+        RETURN server error message
+    END TRY-CATCH
+END DEFINE
+
 
 ### Problem 3: GET pet by owner's name with a query string
 
 The GET route for pets by owner's name is currently "under construction". Navigate to `index.js` and find the GET method at `/api/v1/pets/owner` and write the code to get a pet by owner's name from the database.
 
+answer: DEFINE endpoint GET /api/v1/pets/:name
+    RETRIEVE name from request parameters
+    INITIALIZE database connection
+    TRY
+        EXECUTE SQL query to find pet with matching name
+        IF pet found
+            RETURN pet as JSON
+        ELSE
+            RETURN 'Pet not found' message
+    CATCH any errors
+        LOG error
+        RETURN server error message
+    END TRY-CATCH
+END DEFINE
+
+
 ### STRETCH GOAL: Problem 4: Serve a static index.html file
 
 The GET route for serving a static index.html file is currently "under construction". Navigate to `index.js` and find the GET method at `/` and write the code to serve a static index.html file.
+
+answer: DEFINE endpoint GET /
+    TRY
+        SERVE index.html file from a specified directory ('public')
+        IF file served successfully
+            DISPLAY file in browser
+        ELSE
+            RETURN 'File not found' message
+    CATCH any errors
+        LOG error
+        RETURN server error message
+    END TRY-CATCH
+END DEFINE
+
 
 ### Endpoints
 
